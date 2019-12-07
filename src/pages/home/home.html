@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label>Total time spent  {{elapsed.h}}:{{elapsed.m}}:{{elapsed.s}}</ion-label>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col class="am">
+            <div>
+                <button ion-button round small color="light">Reset</button>
+            </div>
+          </ion-col>
+          <ion-col class="am">
+            <div (click)="pause=!pause">
+                <button ion-button round small color="danger">Stop</button>
+            </div>
+          </ion-col>
+          <ion-col class="am">
+            <div (click)="pause=!pause">
+                <button ion-button round small color="secondary">Save</button>
+            </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+  <circle-progress (click)="startTimer()" (click)="pause=!pause"
+  [percent]="percent"
+  [radius]="radius"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#78C000'"
+  [innerStrokeColor]="'#C7E596'"
+  [animation]="false"
+  [animationDuration]="300"
+  [showSubtitle]="false"
+  [showTitle]="false"
+  [showUnits]="false"
+></circle-progress>
+
+
+
+
+<ion-item>
+    <ion-label>Rest Duration</ion-label>
+    <ion-datetime displayFormat="mm:ss" placeholder="tap here" [(ngModel)]="fullTime"></ion-datetime>
+  </ion-item>
+
+</ion-content>
