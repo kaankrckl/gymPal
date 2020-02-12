@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div (click)="getValue()">
+    <ion-list class="orderprice">
+      <ion-list-header>
+        {{items.food_name}}
+      </ion-list-header>
+      <ion-item>
+        Serving:
+        <span item-end>{{items.serving_weight_grams}} gram</span>
+      </ion-item>
+      <ion-item>
+        Kalori:
+        <span item-end>{{items.nf_calories}} kalori</span>
+      </ion-item>
+      <ion-item>
+        Yağ:
+        <span item-end>{{items.nf_total_fat}} gr</span>
+      </ion-item>
+      <ion-item>
+        Kolesterol:
+        <span item-end>{{items.nf_cholesterol}}</span>
+      </ion-item>
+      <ion-item>
+        Tuz:
+        <span item-end>{{items.nf_sodium}} gr</span>
+      </ion-item>
+      <ion-item>
+        Karbonhidrat:
+        <span item-end>{{items.nf_total_carbohydrate}} gr</span>
+      </ion-item>
+      <ion-item>
+        Fiber:
+        <span item-end>{{items.nf_dietary_fiber}} gr</span>
+      </ion-item>
+      <ion-item>
+        Şeker:
+        <span item-end>{{items.nf_sugars}} gr</span>
+      </ion-item>
+      <ion-item>
+        Protein:
+        <span item-end>{{items.nf_protein}} gr</span>
+      </ion-item>
+      <ion-item>
+        Potasyum:
+        <span item-end>{{items.nf_potassium}} gr</span>
+      </ion-item>
+      
+    </ion-list>
+</div>
+
+</ion-content>
