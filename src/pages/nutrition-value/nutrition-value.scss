@@ -1,3 +1,23 @@
 page-nutrition-value {
-
+    .nullcontent{
+        display: table;
+        height:calc(100% - 76px);
+        width:100%;
+    } 
+    .t1{
+        font-size:92px;
+        display: block;
+    }
+    .t2{
+        font-size:20px;
+    }
+    .text{
+        display: table-cell;
+        vertical-align: middle;
+        text-align:center;
+        opacity: 0.3;
+        width:50%;
+        margin-left:auto;
+        margin-right:auto;
+    }
 }

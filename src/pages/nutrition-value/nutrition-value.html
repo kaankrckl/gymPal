@@ -1,39 +1,51 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="rocher">
+    <form action=".">
+      <ion-searchbar [ngModelOptions]="{standalone: true}" animated="true" placeholder="Ürün ara" [(ngModel)]="search" [showCancelButton]="shouldShowCancel"
+        (ionInput)="onInput($event)">
+      </ion-searchbar>
+    </form>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <div (click)="getValue()">
+
+  <ion-list *ngIf="outsearch == false">
+    <button menuClose ion-item *ngFor="let item of results" (click)="getValue(item.food_name)">
+      <ion-avatar item-start>
+        <img src="{{item.photo.thumb}}">
+      </ion-avatar>
+      <h2>{{item.food_name}}</h2>
+    </button>
+  </ion-list>
+
+  <div (click)="getValue()" *ngIf="items.length !==0">
+    <div>
+      <img src="{{items.photo.thumb}}">
+    </div>
     <ion-list class="orderprice">
-      <ion-list-header>
-        {{items.food_name}}
-      </ion-list-header>
       <ion-item>
         Serving:
         <span item-end>{{items.serving_weight_grams}} gram</span>
       </ion-item>
       <ion-item>
-        Kalori:
-        <span item-end>{{items.nf_calories}} kalori</span>
+        Calories:
+        <span item-end>{{items.nf_calories}} calori</span>
       </ion-item>
       <ion-item>
-        Yağ:
+        Fat:
         <span item-end>{{items.nf_total_fat}} gr</span>
       </ion-item>
       <ion-item>
-        Kolesterol:
+        Cholesterol:
         <span item-end>{{items.nf_cholesterol}}</span>
       </ion-item>
       <ion-item>
-        Tuz:
+        Sodium:
         <span item-end>{{items.nf_sodium}} gr</span>
       </ion-item>
       <ion-item>
-        Karbonhidrat:
+        Carbohydrate:
         <span item-end>{{items.nf_total_carbohydrate}} gr</span>
       </ion-item>
       <ion-item>
@@ -41,7 +53,7 @@
         <span item-end>{{items.nf_dietary_fiber}} gr</span>
       </ion-item>
       <ion-item>
-        Şeker:
+        Sugar:
         <span item-end>{{items.nf_sugars}} gr</span>
       </ion-item>
       <ion-item>
@@ -49,11 +61,19 @@
         <span item-end>{{items.nf_protein}} gr</span>
       </ion-item>
       <ion-item>
-        Potasyum:
+        Potassium:
         <span item-end>{{items.nf_potassium}} gr</span>
       </ion-item>
       
     </ion-list>
+</div>
+
+<div class="nullcontent" *ngIf="items == null || items.length==0">
+  <div class="text">
+    <ion-icon class="t1" name="pizza"></ion-icon>
+    <p class="t2">Search foods to learn their nutrition values.
+      <br> </p>
+  </div>
 </div>
 
 </ion-content>
