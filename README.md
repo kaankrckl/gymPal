@@ -1,7 +1,8 @@
 # gymPal
 
-You can use the timer to visually measure your rest time between sets at the gym.
-You can search foods or drinks to learn their nutrition values.
+You can use the timer to visually measure your rest time between sets at the gym
+
+You can search foods or drinks to learn their nutrition values
 
 ## Getting Started
 
