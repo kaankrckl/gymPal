@@ -6,29 +6,7 @@
 
 <ion-content padding>
 
-    <ion-item>
-        <ion-label>Total time spent  {{elapsed.h}}:{{elapsed.m}}:{{elapsed.s}}</ion-label>
-    </ion-item>
 
-    <ion-grid>
-        <ion-row>
-          <ion-col class="am">
-            <div>
-                <button ion-button round small color="light">Reset</button>
-            </div>
-          </ion-col>
-          <ion-col class="am">
-            <div (click)="pause=!pause">
-                <button ion-button round small color="danger">Stop</button>
-            </div>
-          </ion-col>
-          <ion-col class="am">
-            <div (click)="pause=!pause">
-                <button ion-button round small color="secondary">Save</button>
-            </div>
-          </ion-col>
-        </ion-row>
-    </ion-grid>
 
   <circle-progress (click)="startTimer()" (click)="pause=!pause"
   [percent]="percent"
@@ -47,9 +25,10 @@
 
 
 
+
 <ion-item>
     <ion-label>Rest Duration</ion-label>
     <ion-datetime displayFormat="mm:ss" placeholder="tap here" [(ngModel)]="fullTime"></ion-datetime>
-  </ion-item>
-
+</ion-item>
+<h6>Note: Tap to center of the circle to start/restrart timer!</h6>
 </ion-content>
